@@ -7,7 +7,7 @@ export function Home() {
     <Fragment>
       <Header direction="row-reverse" pad="small" background="brand">
         <Button type="submit" primary label="Sign Out" />
-        <Heading level="2" margin="none">Sign Up Test</Heading>
+        <Heading level="3" margin="none">Sign Up Test</Heading>
       </Header>
       <Box pad="xlarge" align="center" gap="large">
         <Heading margin="none">Welcome!</Heading>
