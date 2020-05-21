@@ -10,7 +10,7 @@ function App() {
         exact
         path="/"
         component={Home}
-        isAuthenticated={false}
+        isAuthenticated={true}
       />
       <Route exact path="/signup" component={SignUp} />
     </BrowserRouter>
