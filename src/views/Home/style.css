@@ -1,0 +1,12 @@
+.Home {
+  text-align: center;
+}
+
+.Home-title {
+  font-size: 4em;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.Home-description {
+  font-size: 8em;
+}
