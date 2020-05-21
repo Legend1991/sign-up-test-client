@@ -7,16 +7,17 @@ const passwordEmailMsg = "Password should be min 8 chars and numbers";
 
 const valueChanged = (oldValue, payload, name, regex, errorMsg, otherField) => {
   const valid = regex.test(payload[name]);
-  const formErrors = {[name]: valid ? undefined : [errorMsg]};
+  const formErrors = { [name]: valid ? undefined : [errorMsg] };
   return {
     ...oldValue,
     ...payload,
     [`${name}Valid`]: valid,
     formValid: valid && oldValue[`${otherField}Valid`],
     formErrors: {
-      ...oldValue.formErrors, 
+      ...oldValue.formErrors,
       ...formErrors
-    }};
+    }
+  };
 }
 
 export const emailChanged = createEvent('emailChanged');
@@ -29,7 +30,7 @@ export const formStore = createStore({
   passwordValid: false,
   formValid: false
 }).on(emailChanged, (oldValue, payload) => {
-    return valueChanged(oldValue, payload, "email", emailRegex, emailErrorMsg, "password");
+  return valueChanged(oldValue, payload, "email", emailRegex, emailErrorMsg, "password");
 }).on(passwordChanged, (oldValue, payload) => {
-    return valueChanged(oldValue, payload, "password", passwordRegex, passwordEmailMsg, "email");
+  return valueChanged(oldValue, payload, "password", passwordRegex, passwordEmailMsg, "email");
 });
